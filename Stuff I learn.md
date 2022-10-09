@@ -28,3 +28,17 @@ fields, methods 🤯
 
 # migrations
 easily readable
+
+# indexing
+A good rule, if you are going to order by, or filter by, it should be indexed.
+models.CharField(db_index=True, max_length=100)
+ 
+ class Meta:
+    indexes = [models.Index(fields=['code0', 'code1']),]
+**https://levelup.gitconnected.com/just-one-index-in-django-makes-your-app-15x-faster-742e2f13108e**
+ 
+bulk_create
+bulk_update
+select_related
+in_bulk
+ https://levelup.gitconnected.com/optimizing-django-queries-28e96ad204de
