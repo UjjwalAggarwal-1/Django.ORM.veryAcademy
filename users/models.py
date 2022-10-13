@@ -46,3 +46,6 @@ class NewUser(AbstractUser):
     nickname = models.CharField(null=True,blank=True, max_length=50)
     username = models.CharField(max_length=250)
     email = models.EmailField(unique=True)
+
+    class Meta:
+        indexes = [models.Index(fields=['username', 'email'])]

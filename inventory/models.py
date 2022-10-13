@@ -31,6 +31,7 @@ class Product(models.Model):
 
     class Meta:
         ordering = ["age"]
+        indexes = [models.Index(fields=["the_name"], db_tablespace="other_indexes")]
     
     def __str__(self):
         return f"Product name: {self.the_name}"
